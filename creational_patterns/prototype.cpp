@@ -1,7 +1,7 @@
-#pragma once
 #include <iostream>
 #include <map>
 #include <string>
+#include <memory>
 
 typedef std::string string;
 
@@ -47,3 +47,20 @@ class ResumeA : public Resume {
  private:
   WorkExperience wexp_;
 };
+
+
+using namespace std;
+
+int main() {
+    Resume* resume = new ResumeA("google", "2015-2017");
+    resume->ShowResume();
+
+    cout << "copy :" << endl;
+    Resume* resume_copy = resume->Clone("baidu", "2017-2019");
+    resume->ShowResume();
+    resume_copy->ShowResume();
+    delete resume_copy;
+    delete resume;
+    resume = nullptr;
+    resume_copy = nullptr;
+}

@@ -1,4 +1,3 @@
-#pragma once
 #include <iostream>
 #include <memory>
 
@@ -52,3 +51,8 @@ class ClothesFactory : public Factory {
   }
   ~ClothesFactory() { std::cout << "clothes desctruct" << std::endl; };
 };
+
+int main(int args, char** argv) {
+  ShoesFactory sfac;
+  std::shared_ptr<Product> prt = sfac.CreateProduct();
+}

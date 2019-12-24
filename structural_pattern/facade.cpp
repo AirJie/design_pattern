@@ -1,4 +1,3 @@
-#pragma once
 #include <iostream>
 #include <string>
 #include <sys/time.h>
@@ -94,3 +93,11 @@ class Shopping {
   Vendor vendor_;
   Courier courier_;
 };
+
+int main() {
+  Shopping shp;
+  std::cout << "shopping online";
+  shp.SubmitOrderRequest();
+  while (!shp.OrderTracking())
+    ;
+}

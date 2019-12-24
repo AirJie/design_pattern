@@ -1,4 +1,3 @@
-#pragma once
 #include <iostream>
 #include <string>
 
@@ -53,3 +52,10 @@ class WindowsSystem : public System {
  private:
   Scheduler* imp_;
 };
+
+int main() {
+    Scheduler *sch = new DisplayScheduler();
+    // System *system = new LinuxSystem(sch);
+    System *system = new WindowsSystem(sch);
+    system->Execute();
+}

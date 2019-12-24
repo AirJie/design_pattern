@@ -1,4 +1,3 @@
-#pragma once
 #include <iostream>
 #include <string>
 
@@ -35,3 +34,8 @@ class PositionRectangle : public Rectangle, private WidthRectangle {
   }
   virtual void Draw() { WidthDraw(); }
 };
+
+int main() {
+  Rectangle *rectangle = new PositionRectangle(1, 1, 4, 5);
+  rectangle->Draw();
+}

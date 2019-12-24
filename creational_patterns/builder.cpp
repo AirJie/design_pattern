@@ -1,4 +1,3 @@
-#pragma once
 #include <iostream>
 #include <memory>
 #include <sstream>
@@ -76,3 +75,12 @@ class Assember {
     bdr->InstallEngine();
   }
 };
+
+using namespace std;
+
+int main() {
+  AudiBuilder *audi = new AudiBuilder();
+  Assember assember(audi);
+  cout << "builder pattern" << endl;
+  return 1;
+}
